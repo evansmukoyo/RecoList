@@ -10,37 +10,32 @@
   <script src="index.js" defer></script>
 </head>
 <body>
-  <header>
-    <nav>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#recommendations">Recommendations</a></li>
-        <li><a href="#about">About</a></li>
-      </ul>
-    </nav>
-  </header>
-
   <main>
     <section id="home">
-      <h1>Welcome to RecoList </h1>
-      <p>Select Discover movies and games tailored to your taste?</p>
-      <button id="get-started-btn">get started </button>
+      <h1 class="header-h">Welcome to RecoList</h1>
+      <p class="header-p">Discover movies and games tailored to your taste.</p>
+      <div class="button-wrap">
+        <button id="get-started-btn">Get Started</button>
+        <button id="aboutus-btn">Get to know Us</button>
+      </div>
     </section>
 
     <section id="recommendations" >
       <h2>Recommendations</h2>
-      <button id="movies-btn" class="toggle-btn">Movies</button>
+      <button id="movies-btn" class="toggle-btn active">Movies</button>
       <button id="games-btn" class="toggle-btn">Games</button>
       
       <!-- Loaded Dynamically with JS -->
       <div id="media-list"></div>
     </section>
+  </main>
 
+  <footer>
     <section id="about">
       <h2>About Us</h2>
        <p>We are a team of media enthusiast who love sharing our favorite movies and games with others. </p>
     </section>
-  </main>
+  </footer>
 
 </body>
 </html>

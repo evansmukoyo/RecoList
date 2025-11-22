@@ -1,65 +1,64 @@
+
 const mediaList = document.getElementById("media-list");
 const moviesBtn = document.getElementById("movies-btn");
 const gamesBtn = document.getElementById("games-btn");
 const getstartedBtn = document.getElementById("get-started-btn");
+const aboutusBtn = document.getElementById("aboutus-btn");
 
-//sample data - movies
+// Sample data - movies (new JPG images)
 const movies = [
   {
-    title: "Inception ",
-    description: "A mind-bendingsci-fi thriller. ",
-    http: "",
+    title: "Inception",
+    description: "A mind-bending sci-fi thriller.",
+    http: "https://upload.wikimedia.org/wikipedia/en/7/7f/Inception_ver3.jpg",
     rating: 8.8
   },
-
   {
     title: "Interstellar",
-    description: "A journey through space and time .",
-    http: "",
+    description: "A journey through space and time.",
+    http: "https://upload.wikimedia.org/wikipedia/en/b/bc/Interstellar_film_poster.jpg",
     rating: 8.5
   },
-
   {
-    title: "Avengers:Endgame",
-    description: "A superhero epic thriller thats a sequel with side stories to explain each character and their journy.",
-    http: "",
+    title: "Avengers: Endgame",
+    description: "A superhero epic thriller.",
+    http: "https://upload.wikimedia.org/wikipedia/en/0/0d/Avengers_Endgame_poster.jpg",
     rating: 8.7
   },
-
   {
-    title: "Enders Game",
-    description: "A classic movie about a futuristic sitting it is about a boy who goes space and trains as a space cadet and spacee army but he can somehow hear aliens what will happen check it out. ",
-    http: "",
+    title: "Ender's Game",
+    description: "A futuristic space adventure.",
+    http: "https://upload.wikimedia.org/wikipedia/en/8/8c/Ender%27s_Game_poster.jpg",
     rating: 8.0
   }
 ];
 
-//sample data - games 
+// Sample data - games (new JPG images)
 const games = [
   {
-    title: "Shodow fight ",
-    http: "",
+    title: "Shadow Fight",
+    http: "https://upload.wikimedia.org/wikipedia/en/1/19/Shadow_Fight_3_cover.jpg",
     rating: 9.0
   },
-
   {
-    title: "Freefire ",
-    http: "",
+    title: "Free Fire",
+    http: "https://upload.wikimedia.org/wikipedia/en/1/12/Garena_Free_Fire.png",
     rating: 9.0
   },
-
   {
     title: "The Witcher 3",
-    http: "",
+    http: "https://upload.wikimedia.org/wikipedia/en/0/0c/Witcher_3_cover_art.jpg",
     rating: 9.0
   },
-
   {
-    title: "God of War ",
-    http: "",
+    title: "God of War",
+    http: "https://upload.wikimedia.org/wikipedia/en/a/a7/God_of_War_4_cover.jpg",
     rating: 9.0
   }
 ];
+
+// Initial display - show movies first
+displayMedia(movies);
 
 // Display media list
 function displayMedia(media) {
@@ -68,12 +67,11 @@ function displayMedia(media) {
     const mediaElement = document.createElement("div");
     mediaElement.classList.add("media");
 
-    // Use placeholder image since you don't have actual poster URLs
     mediaElement.innerHTML = `
-      <img src="https://via.placeholder.com/150x200/333/fff?text=Poster" alt="${item.title}">
+      <img src="${item.http}" alt="${item.title}">
       <h3>${item.title}</h3>
       <p>Rating: ${item.rating}/10</p>
-      ${item.description ? `<p>${item.description}</p>` : ''}
+      ${item.description ? `<p>${item.description}</p>` : ""}
     `;
 
     mediaList.appendChild(mediaElement);
@@ -94,5 +92,11 @@ gamesBtn.addEventListener("click", () => {
 });
 
 getstartedBtn.addEventListener("click", () => {
-  document.getElementById("recommendations").scrollIntoView({ behavior: "smooth" });
+  document.getElementById("recommendations").scrollIntoView({
+    behavior: "smooth"
+  });
+});
+
+aboutusBtn.addEventListener("click", () => {
+  document.getElementById("about").scrollIntoView({ behavior: "smooth" });
 });
